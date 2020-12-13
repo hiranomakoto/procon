@@ -1,2 +1,8 @@
 pdcp_d.py
 longestPath.py
+.devcontainer/devcontainer.json
+.devcontainer/Dockerfile
+.devcontainer_python/devcontainer.json
+.devcontainer_python/Dockerfile
+.vscode/launch.json
+.vscode/tasks.json
