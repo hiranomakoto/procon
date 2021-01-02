@@ -1,6 +1,8 @@
-# RMQ
+# セグメント木
 # update(i,x): i 番目の要素を x に更新。O(log(n))
 # query(a,b): [a,b) での最小の要素を取得。O(log(n))
+# set_val(i,x): i番目の要素をxに設定。木の更新はしない（O(1)）
+# build()：木を構築する（O(n)）
 
 class segmetTree(object):
     def __init__(self,n,func,NA):
@@ -37,15 +39,14 @@ class segmetTree(object):
     
     def query(self,a,b):
         return self.query_sub(a,b,0,0,self.n)
+    
+    def set_val(self,i,x):
+        self.dat[i + self.n - 1] = x
+    
+    def build(self):
+        for k in range(self.n - 2, -1, -1):
+            self.dat[k] = self.func(self.dat[2 * k + 1], self.dat[2 * k + 2])
 
-
-
-t = segmetTree(10)
-for i in range(10):
-    t.update(i,(i * i) % 7)
-
-print(t.query(7,10))
-print(t.dat)
 
 
 
