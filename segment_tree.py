@@ -4,7 +4,7 @@
 # set_val(i,x): i番目の要素をxに設定。木の更新はしない（O(1)）
 # build()：木を構築する（O(n)）
 
-class segmetTree(object):
+class segmentTree(object):
     def __init__(self,n,func,NA):
         """
         n:要素の個数
