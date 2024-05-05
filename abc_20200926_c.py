@@ -33,7 +33,7 @@ class UnionFind:
         else:
             self.root[y] += self.root[x]
             self.root[x] = y
-            # rnkが同じ（深さに差がない場合）は1増やす
+            # rankが同じ（深さに差がない場合）は1増やす
             if self.rank[x] == self.rank[y]:
                 self.rank[y] += 1
     # xとyが同じグループに属するか判断
